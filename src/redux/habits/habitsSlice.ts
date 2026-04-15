@@ -14,12 +14,19 @@ const habitsSlice = createSlice({
     addHabit: (state, action: PayloadAction<Habit>) => {
       state.habits.push(action.payload);
     },
-    removeHabit: ({ habits }, action: PayloadAction<number>) => {
-      habits = habits.filter(habit => habit.id != action.payload);
+    removeHabit: (state, action: PayloadAction<number>) => {
+      state.habits = state.habits.filter(habit => habit.id != action.payload);
+    },
+    changeBoxState: (state, action: PayloadAction<number>) => {
+      state.habits = state.habits.map(habit =>
+        habit.id === action.payload
+          ? { ...habit, isChecked: !habit.isChecked }
+          : habit,
+      );
     },
   },
 });
 
-export const { addHabit, removeHabit } = habitsSlice.actions;
+export const { addHabit, removeHabit, changeBoxState } = habitsSlice.actions;
 
 export default habitsSlice.reducer;

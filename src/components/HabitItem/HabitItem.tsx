@@ -1,15 +1,18 @@
+import { useDispatch } from 'react-redux';
 import type { Habit } from '../../types';
 import css from './habitItem.module.css';
+import { changeBoxState, removeHabit } from '../../redux/habits/habitsSlice';
 interface Props {
   item: Habit;
 }
 export const HabitItem = ({ item }: Props) => {
+  const dispatch = useDispatch();
   const onChangeStatus = (): void => {
-    console.log(' change status');
+    dispatch(changeBoxState(item.id));
   };
 
   const removeHabitHandler = () => {
-    console.log('remove handler');
+    dispatch(removeHabit(item.id));
   };
   return (
     <>
