@@ -1,7 +1,7 @@
 import { createSlice, type PayloadAction } from '@reduxjs/toolkit';
 import type { Habit } from '../../types';
 
-interface Habitstate {
+export interface Habitstate {
   habits: Habit[];
 }
 const initialState: Habitstate = {
