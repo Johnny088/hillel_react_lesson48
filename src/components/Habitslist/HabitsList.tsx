@@ -1,10 +1,10 @@
 import { useSelector } from 'react-redux';
-import { AddNewHabitForm } from '../../components/AddNewHabitForm/AddNewHabitForm';
-import { HabitItem } from '../../components/HabitItem/HabitItem';
-import { HabitsEmptyState } from '../../components/HabitsEmptyState/HabitsEmptyState';
-import css from './habitsPage.module.css';
+import { AddNewHabitForm } from '../AddNewHabitForm/AddNewHabitForm';
+import { HabitItem } from '../HabitItem/HabitItem';
+import { HabitsEmptyState } from '../HabitsEmptyState/HabitsEmptyState';
+import css from './habitsList.module.css';
 import { selectHabits } from '../../redux/habits/habitsSelector';
-export const HabitsPage = () => {
+export const HabitsList = () => {
   const habits = useSelector(selectHabits);
   return (
     <div className={css.container}>

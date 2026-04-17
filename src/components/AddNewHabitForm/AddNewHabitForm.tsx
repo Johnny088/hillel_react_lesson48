@@ -1,5 +1,5 @@
 import { useDispatch } from 'react-redux';
-import type { Habit } from '../../types';
+
 import { addHabit } from '../../redux/habits/habitsSlice';
 import type { AppDispatch } from '../../redux/store';
 
@@ -10,12 +10,7 @@ export const AddNewHabitForm = () => {
     if (title.trim() === '') {
       return;
     }
-    const newHabit: Habit = {
-      title,
-      isChecked: false,
-      id: Date.now(),
-    };
-    dispatch(addHabit(newHabit));
+    dispatch(addHabit(title.trim()));
   };
   return (
     <form action={submitHandler}>

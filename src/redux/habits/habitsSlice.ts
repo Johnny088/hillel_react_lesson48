@@ -11,8 +11,13 @@ const habitsSlice = createSlice({
   name: 'habits',
   initialState,
   reducers: {
-    addHabit: (state, action: PayloadAction<Habit>) => {
-      state.habits.push(action.payload);
+    addHabit: (state, action: PayloadAction<string>) => {
+      const newHabit: Habit = {
+        title: action.payload,
+        isChecked: false,
+        id: Date.now(),
+      };
+      state.habits.push(newHabit);
     },
     removeHabit: (state, action: PayloadAction<number>) => {
       state.habits = state.habits.filter(habit => habit.id != action.payload);
