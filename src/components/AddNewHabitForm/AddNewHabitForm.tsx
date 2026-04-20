@@ -6,15 +6,16 @@ import type { AppDispatch } from '../../redux/store';
 export const AddNewHabitForm = () => {
   const dispatch = useDispatch<AppDispatch>();
   const submitHandler = (formData: FormData) => {
-    const title = formData.get('habit') as string;
-    if (title.trim() === '') {
+    const title = formData.get('title') as string;
+    const habitTitle = title.trim();
+    if (habitTitle === '') {
       return;
     }
-    dispatch(addHabit(title.trim()));
+    dispatch(addHabit(habitTitle));
   };
   return (
     <form action={submitHandler}>
-      <input name="habit" type="text" />
+      <input name="title" type="text" />
       <button>add</button>
     </form>
   );

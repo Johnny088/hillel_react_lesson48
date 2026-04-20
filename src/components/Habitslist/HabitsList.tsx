@@ -2,7 +2,7 @@ import { useSelector } from 'react-redux';
 import { AddNewHabitForm } from '../AddNewHabitForm/AddNewHabitForm';
 import { HabitItem } from '../HabitItem/HabitItem';
 import { HabitsEmptyState } from '../HabitsEmptyState/HabitsEmptyState';
-import css from './habitsList.module.css';
+import css from './HabitsList.module.css';
 import { selectHabits } from '../../redux/habits/habitsSelector';
 export const HabitsList = () => {
   const habits = useSelector(selectHabits);

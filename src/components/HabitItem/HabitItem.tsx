@@ -1,6 +1,6 @@
 import { useDispatch } from 'react-redux';
 import type { Habit } from '../../types';
-import css from './habitItem.module.css';
+import css from './HabitItem.module.css';
 import { toggleHabit, removeHabit } from '../../redux/habits/habitsSlice';
 interface Props {
   item: Habit;
